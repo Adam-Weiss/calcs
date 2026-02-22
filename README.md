@@ -86,9 +86,13 @@ On export:
 
 ## Release Workflow
 
-GitHub Actions workflow in `.github/workflows/release.yml` supports tag releases (`v*`) and manual runs (`workflow_dispatch`):
-- **build job**: `npm ci` → `node scripts/sync-version.mjs` → version check → `npm run build` → `node scripts/zip.mjs` → upload artifacts
-- **release job** (tag pushes only): downloads build artifacts, creates GitHub Release, uploads:
+GitHub Actions workflow in `.github/workflows/release.yml` runs on tag `v*`:
+- `npm ci`
+- `node scripts/sync-version.mjs`
+- validates `manifest.json` version matches tag (without `v`)
+- `npm run build`
+- `node scripts/zip.mjs`
+- creates GitHub Release and uploads:
   - `main.js`
   - `manifest.json`
   - `styles.css`

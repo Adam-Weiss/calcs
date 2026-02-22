@@ -1,0 +1,10 @@
+{
+  "id": "medlog-oneclick",
+  "name": "MedLog One-Click",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "One-click daily medication and vitals logging with TSV export.",
+  "author": "MedLog One-Click Contributors",
+  "authorUrl": "https://github.com/example/medlog-oneclick",
+  "isDesktopOnly": false
+}
